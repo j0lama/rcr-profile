@@ -55,7 +55,7 @@ network.best_effort = True
 for i in range(0,params.nodes):
     node = rspec.RawPC("node" + str(i+1))
     node.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
-    node.addService(PG.Execute(shell="bash", command="/local/repository/scripts/setup.sh " + params.token + " " + params.nodes))
+    node.addService(PG.Execute(shell="bash", command="/local/repository/scripts/setup.sh " + params.token + " " + str(params.nodes)))
     node.hardware_type = params.Hardware
     iface = node.addInterface()
     iface.addAddress(PG.IPv4Address("192.168.1."+str(i+1), netmask))
