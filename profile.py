@@ -66,7 +66,7 @@ i+=1
 # Client machine
 client = rspec.RawPC("client")
 client.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD'
-client.addService(PG.Execute(shell="bash", command="/local/repository/scripts/setup.sh " + params.token))
+client.addService(PG.Execute(shell="bash", command="/local/repository/scripts/setup.sh " + params.token + " " + params.nodes))
 client.hardware_type = params.Hardware
 iface = client.addInterface()
 iface.addAddress(PG.IPv4Address("192.168.1."+str(i+1), netmask))
