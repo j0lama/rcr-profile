@@ -17,13 +17,13 @@ make
 if [ $# -eq 2 ]
 then
     echo "network = {" > rcr.conf
-    for i in {1..$2}
+    for (( i=1; i<=$2; i++ ))
     do
         echo "    node$i = {" >> rcr.conf
         echo "        client_ip_addr = \"192.168.1.$i\";" >> rcr.conf
         echo "        internal_ip_addr = \"192.168.1.$i\";" >> rcr.conf
         echo "        internal_port = 20000;" >> rcr.conf
-        echo "hashmap_size = 1000;" >> rcr.conf
+        echo "        hashmap_size = 1000;" >> rcr.conf
         echo "    };" >> rcr.conf
     done
     echo "}" >> rcr.conf
