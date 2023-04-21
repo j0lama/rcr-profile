@@ -11,7 +11,7 @@ git clone https://j0lama:$1@github.com/j0lama/rcr.git
 
 # Build RCR node
 cd rcr/
-make
+make metrics
 
 # Generate RCR config file
 if [ $# -eq 2 ]
